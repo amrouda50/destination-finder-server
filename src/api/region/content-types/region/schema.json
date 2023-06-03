@@ -1,0 +1,148 @@
+{
+  "kind": "collectionType",
+  "collectionName": "regions",
+  "info": {
+    "singularName": "region",
+    "pluralName": "regions",
+    "displayName": "region",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Region": {
+      "type": "string",
+      "required": true
+    },
+    "u_name": {
+      "type": "string",
+      "unique": false,
+      "required": false
+    },
+    "ParentRegion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::region.region"
+    },
+    "costPerWeek": {
+      "type": "integer"
+    },
+    "safety": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "nature": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "hiking": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "beach": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "watersports": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "entertainment": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "wintersports": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "culture": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "culinary": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "architecture": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "shopping": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "jan": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "feb": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "mar": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "apr": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "may": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "jun": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "jul": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "aug": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "sep": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "oct": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "nov": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "dec": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    }
+  }
+}
