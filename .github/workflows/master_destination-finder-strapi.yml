@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://destinationfinder.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_c87be63af7f649948720064a89dd918b }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_6ed6310ab9584c37823ba2b397ecc6b7 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_b787f5690d714537b5dd005591405874 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_5be116215757427791edc40655274a17 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: destinationfinder.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c87be63af7f649948720064a89dd918b }}/destinationfinderimg:${{ github.sha }}
+        tags: destinationfinder.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_b787f5690d714537b5dd005591405874 }}/destinationfinderimg:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'destination-finder-strapi'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_52bca96a196d4d209085c77183e64e78 }}
-        images: 'destinationfinder.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c87be63af7f649948720064a89dd918b }}/destinationfinderimg:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1754271171fb4af3a4275ae89bec54f8 }}
+        images: 'destinationfinder.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_b787f5690d714537b5dd005591405874 }}/destinationfinderimg:${{ github.sha }}'
