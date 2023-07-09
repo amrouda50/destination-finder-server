@@ -16,6 +16,6 @@ RUN npm install
 COPY . /usr/src/app
 
 RUN npm run build
-EXPOSE 1337
+EXPOSE 443
 
 CMD ["npm", "start"]
