@@ -20,6 +20,6 @@ module.exports = {
    */
   async bootstrap({ strapi }) {
     // Uncomment this to initialize an empty database with the travelRegionsRaw.json data
-    // await initializeRegions({ strapi });
+    await initializeRegions({ strapi });
   },
 };

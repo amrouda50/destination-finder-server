@@ -1,26 +1,25 @@
 const travelRegionsRaw = require("../../travelRegionsRaw.json");
 
 module.exports = {
-
-  statToNum(stat) {
-    switch (stat) {
-      case "++":
-        return 100;
-      case "+":
-        return 75;
-      case "o":
-        return 50;
-      case "-":
-        return 25;
-      case "--":
-        return 0;
-      default:
-        return undefined;
-    }
-  },
-
   async initializeRegions({ strapi }) {
-    const travelRegions = travelRegionsRaw.map((region, index) => {
+    const statToNum = (stat) => {
+      switch (stat) {
+        case "++":
+          return 100;
+        case "+":
+          return 75;
+        case "o":
+          return 50;
+        case "-":
+          return 25;
+        case "--":
+          return 0;
+        default:
+          return undefined;
+      }
+    }
+
+    const travelRegions = travelRegionsRaw.regions.map((region, index) => {
       return {
         ...region,
         id: index + 1,
