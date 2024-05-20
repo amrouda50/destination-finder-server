@@ -1,0 +1,15 @@
+{
+  "collectionName": "selected-region",
+  "info": {
+    "name": "Selected Region"
+  },
+  "attributes": {
+    "months": {
+      "type": "string",
+      "repeatable": true
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
