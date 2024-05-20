@@ -12,7 +12,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "statistics"
+      "mappedBy": "statistics"
     },
     "visitedRegions": {
       "type": "component",
