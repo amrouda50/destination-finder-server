@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user-statistics",
+  "info": {
+    "singularName": "user-statistics",
+    "pluralName": "users-statistics",
+    "displayName": "User Statistics",
+    "description": "User statistics is user specific information which will help in making personalized recommendations"
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "statistics"
+    },
+    "visitedRegions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "selected.region"
+    },
+    "favouriteRegions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "selected.region"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 'use strict';
 
 const {initializeRegions} = require("../config/functions/initializeRegions.js");
+const { subscribeTo } = require("../config/functions/subscribeTo");
 
 module.exports = {
   /**
@@ -20,6 +21,9 @@ module.exports = {
    */
   async bootstrap({ strapi }) {
     // Uncomment this to initialize an empty database with the travelRegionsRaw.json data
+    subscribeTo({strapi});
     await initializeRegions({ strapi });
+
+    console.table(strapi.server.listRoutes().map((r) => ({ path: r.path })));
   },
 };

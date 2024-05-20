@@ -53,7 +53,14 @@ module.exports = {
     for (let i = 0; i < travelRegions.length; i++) {
       const region = travelRegions[i];
       const parentRegion = travelRegions.find((r) => r.Region === region.ParentRegion);
-      await strapi.db.query('api::region.region').create({ data: { ...region, ParentRegion: parentRegion?.id } });
+      const hasOne = await strapi.db.query('api::region.region').findOne({ where: { id:  region.id } });
+      if (!hasOne) {
+        try {
+          await strapi.db.query('api::region.region').create({ data: { ...region, ParentRegion: parentRegion?.id } });
+        } catch (e) {
+          strapi.log.error(`Region with ${region.id} is already created`);
+        }
+      }
     }
   }
 }
