@@ -17,6 +17,10 @@
       "unique": false,
       "required": false
     },
+    "Region": {
+      "type": "string",
+      "unique": false
+    },
     "ParentRegion": {
       "type": "relation",
       "relation": "oneToOne",
