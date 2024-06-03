@@ -26,6 +26,12 @@
       "relation": "oneToOne",
       "target": "api::region.region"
     },
+    "visits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::visits.visit",
+      "mappedBy": "region"
+    },
     "costPerWeek": {
       "type": "integer"
     },

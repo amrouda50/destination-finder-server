@@ -14,10 +14,11 @@
       "target": "plugin::users-permissions.user",
       "mappedBy": "statistics"
     },
-    "visitedRegions": {
-      "type": "component",
-      "repeatable": true,
-      "component": "selected.region"
+    "visits": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::visits.visit",
+      "inversedBy": "user"
     },
     "favouriteRegions": {
       "type": "component",

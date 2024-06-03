@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visits",
+  "info": {
+    "singularName": "visit",
+    "pluralName": "visits",
+    "displayName": "visits"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "review": {
+      "type": "integer",
+      "min": 0,
+      "max": 5
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-statistics.user-statistics",
+      "mappedBy": "visits"
+    },
+    "images": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "multiple": true
+    },
+    "region": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::region.region",
+      "inversedBy": "visits"
+    },
+    "arrived": {
+      "type": "timestamp"
+    },
+    "departed": {
+      "type": "timestamp"
+    }
+  }
+}
