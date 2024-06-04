@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "presets",
+  "info": {
+    "singularName": "preset",
+    "pluralName": "presets",
+    "displayName": "preset"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "budget": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "budgetPriority": {
+      "type": "boolean"
+    },
+    "months": {
+      "type": "string",
+      "repeatable": true
+    },
+    "advanced": {
+      "type": "component",
+      "component": "preference.preference",
+      "repeatable": true
+    },
+    "novice": {
+      "type": "string",
+      "repeatable": true
+    }
+  }
+}
