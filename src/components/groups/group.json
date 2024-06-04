@@ -1,0 +1,20 @@
+{
+  "collectionName": "group",
+  "info": {
+    "name": "Collection of the regions group"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 5,
+      "unique": false,
+      "required": true
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::region.region",
+      "inversedBy": "groups"
+    }
+  }
+}

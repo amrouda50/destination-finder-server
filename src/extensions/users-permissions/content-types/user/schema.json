@@ -71,6 +71,29 @@
       "target": "api::user-statistics.user-statistics",
       "description": "Relation to custom table",
       "inversedBy": "user"
+    },
+    "groups": {
+      "type": "component",
+      "repeatable": true,
+      "component": "groups.group"
+    },
+    "occupation": {
+      "type": "string",
+      "required": false
+    },
+    "profilePhoto": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "required": false
+    },
+    "coverPhoto": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "required": false
     }
   },
   "config": {

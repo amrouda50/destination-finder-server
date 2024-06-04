@@ -1,0 +1,16 @@
+{
+  "collectionName": "preference",
+  "info": {
+    "name": "Preferences"
+  },
+  "attributes": {
+    "feature": {
+      "type": "string"
+    },
+    "importance": {
+      "type": "number",
+      "min": 0,
+      "max": 100
+    }
+  }
+}
