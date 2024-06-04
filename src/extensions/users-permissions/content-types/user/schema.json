@@ -71,6 +71,11 @@
       "target": "api::user-statistics.user-statistics",
       "description": "Relation to custom table",
       "inversedBy": "user"
+    },
+    "groups": {
+      "type": "component",
+      "repeatable": true,
+      "component": "groups.group"
     }
   },
   "config": {
