@@ -27,10 +27,7 @@
     "images": {
       "type": "media",
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "multiple": true
     },
