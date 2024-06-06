@@ -26,8 +26,9 @@
       "component": "selected.region"
     },
     "recommendations": {
-      "type" : "string",
-      "repeatable": true
+      "type" : "relation",
+      "relation": "manyToMany",
+      "target": "api::region.region"
     }
   }
 }
