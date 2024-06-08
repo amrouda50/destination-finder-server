@@ -1,4 +1,4 @@
-const travelRegionsRaw = require("../../travelRegionsRaw.json");
+const travelRegionsRaw = require("../../datasets/travelRegionsRaw.json");
 
 module.exports = {
   async initializeRegions({ strapi }) {
