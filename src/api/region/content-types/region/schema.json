@@ -32,12 +32,6 @@
       "target": "api::visits.visit",
       "mappedBy": "region"
     },
-    "groups": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "regions"
-    },
     "costPerWeek": {
       "type": "integer"
     },
