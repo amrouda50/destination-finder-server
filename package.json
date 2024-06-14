@@ -13,9 +13,9 @@
     "build:win": "cross-env NODE_ENV=production npm run build"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.10.5",
-    "@strapi/plugin-users-permissions": "4.10.5",
-    "@strapi/strapi": "4.10.5",
+    "@strapi/plugin-i18n": "^4.10.5",
+    "@strapi/plugin-users-permissions": "^4.10.5",
+    "@strapi/strapi": "^4.25.5",
     "cross-env": "^7.0.3",
     "pg": "^8.8.0"
   },
