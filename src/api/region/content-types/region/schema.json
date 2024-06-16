@@ -156,12 +156,12 @@
       "min": 0
     },
     "visitorIndex": {
-      "type": "component",
-      "component": "props.index"
+      "type": "json",
+      "repeatable": false
     },
     "peakSeason": {
-      "type": "component",
-      "component": "props.season"
+      "type": "json",
+      "repeatable": false
     }
   }
 }
