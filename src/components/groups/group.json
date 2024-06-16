@@ -13,8 +13,7 @@
     "regions": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::region.region",
-      "inversedBy": "groups"
+      "target": "api::region.region"
     }
   }
 }

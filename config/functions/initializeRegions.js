@@ -1,4 +1,4 @@
-const travelRegionsRaw = require("../../travelRegionsRaw.json");
+const travelRegionsRaw = require("../../datasets/travelRegionsRaw.json");
 
 module.exports = {
   async initializeRegions({ strapi }) {
@@ -18,10 +18,11 @@ module.exports = {
           return undefined;
       }
     }
-
     const travelRegions = travelRegionsRaw.regions.map((region, index) => {
       return {
         ...region,
+        visitorIndex: region.visitorIndex,
+        peakSeason: region.isPeakSeason,
         id: index + 1,
         costPerWeek: region.costPerWeek === "" ? undefined : parseInt(region.costPerWeek),
         safety: statToNum(region.safety),
@@ -50,14 +51,14 @@ module.exports = {
       };
     });
 
-
+    let show = true;
     for (let i = 0; i < travelRegions.length; i++) {
       const region = travelRegions[i];
       const parentRegion = travelRegions.find((r) => r.Region === region.ParentRegion);
       const hasOne = await strapi.db.query('api::region.region').findOne({ where: { id:  region.id } });
       if (!hasOne) {
         try {
-          await strapi.db.query('api::region.region').create({ data: { ...region, ParentRegion: parentRegion?.id } });
+         await strapi.db.query('api::region.region').create({ data: { ...region, ParentRegion: parentRegion?.id } });
         } catch (e) {
           strapi.log.error(`Region with ${region.id} is already created`);
         }
