@@ -10,6 +10,9 @@
       "unique": false,
       "required": true
     },
+    "description": {
+      "type": "string"
+    },
     "regions": {
       "type": "relation",
       "relation": "manyToMany",
