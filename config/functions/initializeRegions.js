@@ -51,7 +51,6 @@ module.exports = {
       };
     });
 
-    let show = true;
     for (let i = 0; i < travelRegions.length; i++) {
       const region = travelRegions[i];
       const parentRegion = travelRegions.find((r) => r.Region === region.ParentRegion);
