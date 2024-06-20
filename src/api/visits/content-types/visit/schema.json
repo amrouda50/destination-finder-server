@@ -8,15 +8,21 @@
   },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "minLength": 5
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true,
+      "minLength": 10
     },
     "review": {
       "type": "integer",
       "min": 0,
-      "max": 5
+      "max": 5,
+      "required": true,
+      "minLength": 10
     },
     "user": {
       "type": "relation",
@@ -38,10 +44,12 @@
       "inversedBy": "visits"
     },
     "arrived": {
-      "type": "timestamp"
+      "type": "timestamp",
+      "required": true
     },
     "departed": {
-      "type": "timestamp"
+      "type": "timestamp",
+      "required": true
     }
   }
 }
