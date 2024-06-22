@@ -72,11 +72,6 @@
       "description": "Relation to custom table",
       "inversedBy": "user"
     },
-    "groups": {
-      "type": "component",
-      "repeatable": true,
-      "component": "groups.group"
-    },
     "occupation": {
       "type": "string",
       "required": false

@@ -29,6 +29,11 @@
       "type" : "relation",
       "relation": "manyToMany",
       "target": "api::region.region"
+    },
+    "groups": {
+      "type": "component",
+      "repeatable": true,
+      "component": "groups.group"
     }
   }
 }

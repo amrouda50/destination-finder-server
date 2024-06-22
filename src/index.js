@@ -23,7 +23,6 @@ module.exports = {
     // Uncomment this to initialize an empty database with the travelRegionsRaw.json data
     subscribeTo({strapi});
     await initializeRegions({ strapi });
-
-    console.table(strapi.server.listRoutes().map((r) => ({ path: r.path })));
+    console.table(strapi.server.listRoutes().map((r) => ({ path: r.path, methods: r.methods?.join(', ').slice(0, 20) })));
   },
 };
