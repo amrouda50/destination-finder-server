@@ -8,7 +8,7 @@
       "type": "string"
     },
     "importance": {
-      "type": "number",
+      "type": "integer",
       "min": 0,
       "max": 100
     }
