@@ -1,8 +1,8 @@
 FROM node:16-alpine
 
-ENV PORT 80
-ENV HOST 0.0.0.0
-ENV NODE_ENV production
+ENV PORT=80
+ENV HOST=0.0.0.0
+ENV NODE_ENV=production
 
 #create app directory
 RUN mkdir -p /usr/src/app
