@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:18-alpine
 
 ENV PORT=80
 ENV HOST=0.0.0.0
