@@ -29,7 +29,7 @@ jobs:
       with:
         push: true
         tags: destirec.azurecr.io/${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}/destinationfinderimg:${{ github.sha }}
-        file: ../../Dockerfile
+        file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
