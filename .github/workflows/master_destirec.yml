@@ -19,7 +19,7 @@ jobs:
       - name: Log in to Azure Container Registry
         uses: docker/login-action@v2
         with:
-          registry: destirec.azurecr.io
+          registry: https//:destirec.azurecr.io/
           username: ${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}
           password: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
 
@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: destirec.azurecr.io/destinationfinderimg:${{ github.sha }}
+          tags: destirec.azurecr.io/${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}/destinationfinderimg:${{ github.sha }}
           file: ../../Dockerfile
 
   deploy:
@@ -47,4 +47,4 @@ jobs:
           app-name: 'Destirec'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'destirec.azurecr.io/destinationfinderimg:${{ github.sha }}'
+          images: 'destirec.azurecr.io/${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}/destinationfinderimg:${{ github.sha }}'
