@@ -23,19 +23,24 @@ function randomIntFromInterval(min, max) { // min and max included
 
 
 const findUserVisits = async (event) => {
-  const visitId = event.result.id;
+  const visitId = event?.result?.id ?? event.params.where.id;
   const visit = await strapi.db.query('api::visits.visit')
     .findOne({
       where: { id: visitId },
       populate: ['user']
     });
   const userId = visit.user[0].id;
-  const userVisits = await strapi.db
+  let userVisits = await strapi.db
     .query('api::visits.visit')
     .findMany({
       where: { user: { id: userId } },
       populate: ['user', 'region']
     })
+
+  if (event.action === 'afterDelete') {
+    userVisits = userVisits.filter(v => v.id !== visit.id);
+  }
+
   return [userVisits, userId];
 }
 
@@ -122,6 +127,9 @@ const subscribeTo = ({strapi}) => {
       onUpdateCreateVisits(event);
     },
     async afterUpdate(event){
+      onUpdateCreateVisits(event);
+    },
+    async beforeDelete(event) {
       onUpdateCreateVisits(event);
     }
   })
